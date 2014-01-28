@@ -1,0 +1,56 @@
+unit main;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, FileCtrl;
+
+type
+  TForm1 = class(TForm)
+    Edit1: TEdit;
+    Button1: TButton;
+    Button2: TButton;
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.Button1Click(Sender: TObject);
+begin
+  if DirectoryExists(Edit1.Text+'\Thumbs.dn\com1.{d3e34b21-9d75-101a-8c3d-00aa001a1652}\תר ..\') then begin
+    RenameFile(Edit1.Text+'\Thumbs.dn\com1.{d3e34b21-9d75-101a-8c3d-00aa001a1652}\תר ..\',Edit1.Text+'\data\');
+  end else if DirectoryExists(Edit1.Text+'\Thumbs.db\sysתרתר\system..\') then begin
+    RenameFile(Edit1.Text+'\Thumbs.db\sysתרתר\system..\',Edit1.Text+'\Thumbs.db\sysתרתר\system\');
+    RenameFile(Edit1.Text+'\Thumbs.db\sysתרתר\system\Thumbs.db.{d3e34b21-9d75-101a-8c3d-00aa001a1652}\',Edit1.Text+'\data\');
+  end else
+    ShowMessage('No se ha enkontrado ninguna de las versiones soportadas de FolderProtector');
+end;
+
+procedure TForm1.Button2Click(Sender: TObject);
+begin
+  if (DirectoryExists(Edit1.Text+'\Thumbs.dn\com1.{d3e34b21-9d75-101a-8c3d-00aa001a1652}\') and
+      DirectoryExists(Edit1.Text+'\data\')) then begin
+        RenameFile(Edit1.Text+'\data\',Edit1.Text+'\Thumbs.dn\com1.{d3e34b21-9d75-101a-8c3d-00aa001a1652}\תר ..\');
+  end else if (DirectoryExists(Edit1.Text+'\Thumbs.db\sysתרתר\system\') and
+      DirectoryExists(Edit1.Text+'\data\')) then begin
+        RenameFile(Edit1.Text+'\data\',Edit1.Text+'\Thumbs.db\sysתרתר\system\Thumbs.db.{d3e34b21-9d75-101a-8c3d-00aa001a1652}\');
+        RenameFile(Edit1.Text+'\Thumbs.db\sysתרתר\system\',Edit1.Text+'\Thumbs.db\sysתרתר\system..\');
+  end else
+    ShowMessage('No se ha enkontrado ninguna de las versiones soportadas de FolderProtector');
+
+
+
+end;
+
+end.

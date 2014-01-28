@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2011/11/20 00:58:52.643.pas,D:\mayo\RAD Studio\Projects\Unit1.pas=F:\Trabajo\AntiFolderProtection\main.pas</Transaction>
+    <Transaction>2011/11/20 00:58:52.643.dfm,D:\mayo\RAD Studio\Projects\Unit1.dfm=F:\Trabajo\AntiFolderProtection\main.dfm</Transaction>
+    <Transaction>2011/11/20 00:58:55.478.dproj,D:\mayo\RAD Studio\Projects\Project1.dproj=F:\Trabajo\AntiFolderProtection\AntiFolderProtection.dproj</Transaction>
+  </Transactions>
+</BorlandProject>
